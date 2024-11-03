@@ -1,0 +1,26 @@
+variables:
+  VERSION: 1.0.${CI_PIPELINE_ID}
+
+stages
+  - test
+  - build
+  - update-chart
+
+sonarqube-frontend-sast:
+  stage: test
+  image: sonarsource/sonar-scanner-cli:latest
+  script:
+    - cd frontend
+    - >
+      sonar-scanner
+      -Dsonar.sources=. 
+      -Dsonar.qualitygate.wait=true
+      -Dsonar.projectKey=${SONAR_PROJECT_KEY}
+      -Dsonar.host.url=${SONARQUBE_URL}
+      -Dsonar.login=${SONAR_LOGIN}
+  when: manual    
+
+spotbugs-sast:
+  stage: test
+  script:
+    - cd frontend
