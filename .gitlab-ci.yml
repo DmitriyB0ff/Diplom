@@ -7,6 +7,18 @@ frontend:
     include:
      - local: 'front.yml'
      - template: Security/SAST.gitlab-ci.yml
+    strategy: depend
   only:
     changes:
-     - frontend/**/*     
+     - frontend/**/*
+
+backend:
+  stage: module-pipelines
+  trigger:
+    include:
+     - local: 'back.yml'
+     - template: Security/SAST.gitlab-ci.yml
+    strategy: depend
+  only:
+    changes:
+     - backend/**/*
