@@ -18,6 +18,7 @@ sonarqube-frontend-sast:
       -Dsonar.projectKey=${SONAR_PROJECT_KEY}
       -Dsonar.host.url=${SONARQUBE_URL}
       -Dsonar.login=${SONAR_LOGIN}
+      -Dsonar.projectName="Dmitriy_Kuropatko_momostore"
   when: manual    
 
 spotbugs-sast:
