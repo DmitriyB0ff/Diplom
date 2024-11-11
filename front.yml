@@ -27,7 +27,7 @@ spotbugs-sast:
     - cd frontend
 
 build-frontend-docker-image:
-  stage: build-image-for-release
+  stage: build
   image: alpine:latest
   before_script:
     - apk add docker docker-compose curl

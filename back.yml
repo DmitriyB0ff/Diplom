@@ -35,7 +35,7 @@ go-test:
   allow_failure: true
 
 build-backend-docker-image:
-  stage: build-image-for-release
+  stage: build
   image: alpine:latest
   before_script:
     - apk add docker docker-compose curl
