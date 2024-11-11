@@ -26,7 +26,7 @@ spotbugs-sast:
   script:
     - cd frontend
 
-build-backend-code-job: 
+build-frontend-code-job:
   stage: build
   image:
     name: gcr.io/kaniko-project/executor:v1.9.0-debug
@@ -35,20 +35,25 @@ build-backend-code-job:
   script:
     - echo "test"
     - /kaniko/executor
-      --context "${CI_PROJECT_DIR}/backend"
-      --dockerfile "${CI_PROJECT_DIR}/backend/Dockerfile"
-      --destination "${CI_REGISTRY_IMAGE}/sausage-backend:$CI_COMMIT_SHA"
+      --context "${CI_PROJECT_DIR}/frontend"
+      --dockerfile "${CI_PROJECT_DIR}/frontend/Dockerfile"
+      --destination "${CI_REGISTRY_IMAGE}/frontend:$CI_COMMIT_SHA"
       --build-arg VERSION=$VERSION
-      --cache=true    
+      --cache=true      
 
-# build-frontend-docker-image:
-#   stage: build
-#   image: alpine:latest
-#   before_script:
-#     - apk add docker docker-compose curl
-#     - until docker info; do sleep 1; done
-#     - ls /var/run/ 
-#     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-#   script:
-#     - docker-compose build frontend
+upload-frontend-release:
+  variables:
+    GIT_STRATEGY: none
+  image:
+    name: gcr.io/go-containerregistry/crane:debug
+    entrypoint: [ "" ]
+  cache: [ ]
+  stage: release
+  before_script:
+    - crane auth login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - crane tag $CI_REGISTRY_IMAGE/frontend:$CI_COMMIT_SHA $VERSION
+
+
+
 #     - docker-compose push frontend
