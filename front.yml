@@ -57,7 +57,7 @@ spotbugs-sast:
 #     - crane tag $CI_REGISTRY_IMAGE/momo-frontend:$CI_COMMIT_SHA $VERSION
 
 build-frontend-docker-image:
-  stage: build-image-for-release
+  stage: build
   image: alpine:latest
   before_script:
     - apk add docker docker-compose curl
