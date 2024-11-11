@@ -41,18 +41,18 @@ build-frontend-code-job:
       --build-arg VERSION=$VERSION
       --cache=true      
 
-upload-frontend-release:
-  variables:
-    GIT_STRATEGY: none
-  image:
-    name: gcr.io/go-containerregistry/crane:debug
-    entrypoint: [ "" ]
-  cache: [ ]
-  stage: release
-  before_script:
-    - crane auth login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-  script:
-    - crane tag $CI_REGISTRY_IMAGE/frontend:$CI_COMMIT_SHA $VERSION
+# upload-frontend-release:
+#   variables:
+#     GIT_STRATEGY: none
+#   image:
+#     name: gcr.io/go-containerregistry/crane:debug
+#     entrypoint: [ "" ]
+#   cache: [ ]
+#   stage: release
+#   before_script:
+#     - crane auth login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+#   script:
+#     - crane tag $CI_REGISTRY_IMAGE/frontend:$CI_COMMIT_SHA $VERSION
 
 
 
