@@ -25,3 +25,14 @@ spotbugs-sast:
   stage: test
   script:
     - cd frontend
+
+build-frontend-docker-image:
+  stage: build-image-for-release
+  image: alpine:latest
+  before_script:
+    - apk add docker docker-compose curl
+    - until docker info; do sleep 1; done
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker-compose build frontend
+    - docker-compose push frontend
