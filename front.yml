@@ -4,7 +4,7 @@ variables:
 stages:
   - test
   - build
-  - update-chart
+  - update-version-chart
   - release
 
 
@@ -55,3 +55,14 @@ upload-frontend-release:
     - crane auth login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   script:
     - crane tag $CI_REGISTRY_IMAGE/momo-frontend:$CI_COMMIT_SHA $VERSION
+
+update-version-chart:
+  stage: update-version-chart
+  image: alpine:latest
+  before_script:
+    - apk update && apk add bash curl git openssh-client docker
+    - until docker info; do sleep 1; done
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY    
+  script:
+    #Настраиваем CLI YC и kubeconfig (неинтерактивный режим)
+    - /bin/bash -s < ./helmchart_ver.sh
