@@ -4,7 +4,7 @@ stages:
 
 deploy:
   stage: deploy    
-  image: helm-kubectl
+  image: dtzar/helm-kubectl
   script:
     #Настраиваем CLI YC и kubeconfig (неинтерактивный режим)
     - /bin/bash -s < ./yc_kubectl_configng.sh
