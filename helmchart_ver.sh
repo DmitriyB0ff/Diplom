@@ -13,6 +13,7 @@ git config --global user.email "$GITLAB_USER_EMAIL"
 git config --global user.name "update-bot"
 
 mkdir -p /tmp/momo-store-iac && cd $_
+echo "Pat" ${PAT_TOKEN}
 git clone https://gitlab-ci-token:${PAT_TOKEN}@gitlab.praktikum-services.ru/std-ext-008-12/momostore.git .
 git switch $CI_COMMIT_REF_NAME
 
