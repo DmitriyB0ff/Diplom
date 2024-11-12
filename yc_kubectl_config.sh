@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export 
+
 #Скачиваем и устанавливаем CLI YC (неинтерактивный режим)
 curl https://storage.yandexcloud.net/yandexcloud-yc/install.sh |     bash -s -- -i ./yc -n
 #Переходим в каталог ./yc/bin
