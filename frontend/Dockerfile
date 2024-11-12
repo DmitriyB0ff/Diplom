@@ -1,6 +1,6 @@
 # build
 FROM node:16 AS builder
-ARG VERSION=1  #${VERSION}
+ARG VERSION=${VERSION}
 WORKDIR '/app'
 COPY . .
 RUN npm install

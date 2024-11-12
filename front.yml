@@ -58,7 +58,7 @@ upload-frontend-release:
 
 update-version-chart:
   stage: update-version-chart
-  image: alpine:latest
+  image: gcr.io/go-containerregistry/crane:debug
   before_script:
     - apk update && apk add bash curl git openssh-client docker
     - until docker info; do sleep 1; done
