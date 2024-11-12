@@ -62,7 +62,7 @@ update-version-chart:
   before_script:
     - apk update && apk add bash curl git openssh-client docker-cli-compose
     #- systemctl start docker
-    - until docker info; do sleep 1; done
+    #- until docker info; do sleep 1; done
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY    
   script:
     #Настраиваем CLI YC и kubeconfig (неинтерактивный режим)
