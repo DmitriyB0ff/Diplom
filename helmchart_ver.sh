@@ -31,7 +31,7 @@ fi
 
 # Update frontend version if docker image was build
 if docker manifest inspect "$CONTAINER_REGISTRY/momo-frontend:$VERSION" > /dev/null ; then
-    sed -i -e "/^- name: frontend$/{n;s/^  version.*/  version: $VERSION/;}" ./momo-store-chart/Chart.yaml
+    sed -i -e "/^- name: frontend$/{n;s/^  version:*/  version: $VERSION/;}" ./momo-store-chart/Chart.yaml
     sed -i -e "s/^appVersion.*/appVersion: $VERSION/" -e "s/^version.*/version: $VERSION/" ./momo-store-chart/charts/frontend/Chart.yaml
     echo "Frontend version has been updated."
 else
