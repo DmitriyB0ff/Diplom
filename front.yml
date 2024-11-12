@@ -4,9 +4,8 @@ variables:
 stages:
   - test
   - build
-  - update-version-chart
   - release
-
+  - update-version-chart
 
 sonarqube-frontend-sast:
   stage: test
