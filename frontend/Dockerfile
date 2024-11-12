@@ -1,7 +1,7 @@
 # build
 FROM node:16 AS builder
 ARG VERSION=${VERSION}
-WORKDIR '/app'
+WORKDIR '/app' 
 COPY . .
 RUN npm install
 RUN npm run build -- --output-path=dist
