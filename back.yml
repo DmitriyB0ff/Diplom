@@ -84,4 +84,4 @@ update-version-chart:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY    
   script:
     #Настраиваем CLI YC и kubeconfig (неинтерактивный режим)
-    - /bin/bash -s < ./helmchart_ver2.sh
+    - /bin/bash -s < ./helmchart_ver.sh
