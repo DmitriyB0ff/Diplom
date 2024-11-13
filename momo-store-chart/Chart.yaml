@@ -1,4 +1,4 @@
-apiVersion: v2    
+apiVersion: v2   
 appVersion: 1.0.1635323
 dependencies:
 - name: backend
