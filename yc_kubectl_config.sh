@@ -16,4 +16,4 @@ echo "CLOUD"
 echo "YC_CLUSTER_ID"
 ./yc managed-kubernetes cluster get-credentials ${YC_CLUSTER_ID} --external
 #Добавляем manespace в kubeconfig
-sed -i '9i\    namespace: momo-0812' /root/.kube/config
+sed -i '9i\    namespace: yc-managed-k8s' /root/.kube/config
