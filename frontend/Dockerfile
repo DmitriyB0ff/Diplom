@@ -1,4 +1,4 @@
-# build
+# build 
 FROM node:16 AS builder
 ARG VERSION=${VERSION}
 WORKDIR '/app'
