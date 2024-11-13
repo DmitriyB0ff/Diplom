@@ -8,6 +8,6 @@ dependencies:
   repository: ""
   version: 1.0.1
 description: momo-store Helm Chart
-name: momo-store
+name: kubecluster-for-momoapp
 type: application
 version: 1.0.1635323
