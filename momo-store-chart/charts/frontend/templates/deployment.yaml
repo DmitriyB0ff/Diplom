@@ -17,7 +17,7 @@ metadata:
     #wtf
     app.kubernetes.io/component: frontend
     #Имя приложения выше уровнем, частью которого является это приложение
-    app.kubernetes.io/part-of: sausage-store
+    app.kubernetes.io/part-of: momo-store
 spec:
   replicas: {{ .Values.spec.replicas }}
   revisionHistoryLimit: {{ .Values.spec.revisionHistoryLimit }}
