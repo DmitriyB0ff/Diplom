@@ -5,7 +5,7 @@ curl https://storage.yandexcloud.net/yandexcloud-yc/install.sh |     bash -s -- 
 #Переходим в каталог ./yc/bin
 cd ./yc/bin
 #Задаём конфигурацию профиля sa
-./yc config set service-account-key ${YC_SA_KEY}
+#./yc config set service-account-key ${YC_SA_KEY}
 ./yc config set cloud-id ${YC_CLOUD_ID}
 ./yc config set folder-id ${YC_FOLDER_ID}
 #Проверяем видимость кубекластера в YC
