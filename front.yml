@@ -35,8 +35,8 @@ build-frontend-docker-image:
     #- until docker info; do sleep 1; done
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   script:
-    - docker-compose build frontend
-    - docker-compose push frontend
+    - docker compose build frontend
+    - docker compose push frontend
 
 # build-frontend-code-job:
 #   stage: build
