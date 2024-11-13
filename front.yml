@@ -27,31 +27,20 @@ spotbugs-sast:
   script:
     - cd frontend
 
-build-frontend-docker-image:
+build-frontend-code-job:
   stage: build
-  image: docker:24.0.7-alpine3.19
-  before_script:
-    - apk add docker docker-compose curl
-    #- until docker info; do sleep 1; done
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  image:
+    name: gcr.io/kaniko-project/executor:v1.9.0-debug
+    entrypoint: [""]
+  # переменные CI_REGISTRY_USER, CI_REGISTRY_PASSWORD, CI_REGISTRY генерятся Гитлабом, их задавать не надо
   script:
-    - docker compose build frontend
-    - docker compose push frontend
-
-# build-frontend-code-job:
-#   stage: build
-#   image:
-#     name: gcr.io/kaniko-project/executor:v1.9.0-debug
-#     entrypoint: [""]
-#   # переменные CI_REGISTRY_USER, CI_REGISTRY_PASSWORD, CI_REGISTRY генерятся Гитлабом, их задавать не надо
-#   script:
-#     - echo "test"
-#     - /kaniko/executor
-#       --context "${CI_PROJECT_DIR}/frontend"
-#       --dockerfile "${CI_PROJECT_DIR}/frontend/Dockerfile"
-#       --destination "${CI_REGISTRY_IMAGE}/momo-frontend:$CI_COMMIT_SHA"
-#       --build-arg VERSION=$VERSION
-#       --cache=true      
+    - echo "test"
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}/frontend"
+      --dockerfile "${CI_PROJECT_DIR}/frontend/Dockerfile"
+      --destination "${CI_REGISTRY_IMAGE}/momo-frontend:$CI_COMMIT_SHA"
+      --build-arg VERSION=$VERSION
+      --cache=true      
 
 upload-frontend-release:
   variables:
