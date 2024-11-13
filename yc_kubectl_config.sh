@@ -3,7 +3,7 @@
 #Скачиваем и устанавливаем CLI YC (неинтерактивный режим)
 curl https://storage.yandexcloud.net/yandexcloud-yc/install.sh |     bash -s -- -i ./yc -n
 #Переходим в каталог ./yc/bin
-cd ./yc/bin
+cd ./yc/bin/yc
 #Задаём конфигурацию профиля sa
 .yc init
 ./yc config set service-account-key ${YC_SA_KEY}
