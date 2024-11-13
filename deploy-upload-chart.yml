@@ -11,7 +11,7 @@ deploy:
     #Задаём секрет
 #    - kubectl create secret docker-registry regcred --docker-server=gitlab.praktikum-services.ru:5050/std-ext-008-12/momostore/ --docker-username=${DOCKER_LOGIN} --docker-password=${DOCKER_PASS} 
     #Деплоим новую версию приложения
-    - helm upgrade kubecluster-for-momoapp ./momo-store-chart
+    - helm upgrade --install kubecluster-for-momoapp ./momo-store-chart
 
 # upload:
 #   stage: upload-chart
