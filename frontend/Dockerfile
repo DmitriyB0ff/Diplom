@@ -6,6 +6,7 @@ ARG VUE_APP_API_URL=http://localhost:8081
 WORKDIR '/app'
 COPY . .
 RUN npm install
+RUN npm install -g @vue/cli
 RUN npm run build --output-path=dist
 
 #release 
