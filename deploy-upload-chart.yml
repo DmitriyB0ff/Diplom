@@ -15,7 +15,7 @@ deploy:
 
 upload:
   stage: upload-chart
-  image: helm-kubectl
+  image:  dtzar/helm-kubectl
   script:
     #Упаковываем helm-chart приложения
     - helm package ./momo-store-chart
