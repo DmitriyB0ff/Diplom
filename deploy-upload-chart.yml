@@ -19,5 +19,6 @@ upload:
   script:
     #Упаковываем helm-chart приложения
     - helm package ./momo-store-chart
+    - ls
     #Отправляем helm-chart в Nexus
     - curl -u ${NEXUS_REPO_USER}:${NEXUS_REPO_PASS} ${NEXUS_REPO_URL_HELM} --upload-file *.tgz  
