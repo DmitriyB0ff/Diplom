@@ -25,7 +25,7 @@ frontend:
   image:
     repository: gitlab.praktikum-services.ru:5050/std-ext-008-12/momostore/
     tag: latest
-    pullPolicy: IfNotPresent 
+    pullPolicy: IfNotPresent  
 
   spec: 
       replicas: "1" 

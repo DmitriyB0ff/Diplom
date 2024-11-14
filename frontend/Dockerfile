@@ -1,6 +1,8 @@
 # build
 FROM node:16 AS builder
 ARG VERSION=${VERSION}
+ARG NODE_ENV=production 
+ARG VUE_APP_API_URL=http://localhost:8081
 WORKDIR '/app'
 COPY . .
 RUN npm install
