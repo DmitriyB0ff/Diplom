@@ -13,11 +13,11 @@ deploy:
     #Деплоим новую версию приложения
     - helm upgrade --install kubecluster-for-momoapp ./momo-store-chart
 
-# upload:
-#   stage: upload-chart
-#   image: helm-kubectl
-#   script:
-#     #Упаковываем helm-chart приложения
-#     - helm package ./momo-store-chart
-#     #Отправляем helm-chart в Nexus
-#     - curl -u ${NEXUS_REPO_USER}:${NEXUS_REPO_PASS} ${NEXUS_REPO_URL_HELM} --upload-file *.tgz  
+upload:
+  stage: upload-chart
+  image: helm-kubectl
+  script:
+    #Упаковываем helm-chart приложения
+    - helm package ./momo-store-chart
+    #Отправляем helm-chart в Nexus
+    - curl -u ${NEXUS_REPO_USER}:${NEXUS_REPO_PASS} ${NEXUS_REPO_URL_HELM} --upload-file *.tgz  
