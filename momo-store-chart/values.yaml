@@ -33,8 +33,8 @@ frontend:
   ports:
       containerPort: "80"
       nodePort: "30081"
-  fqdn: dmitriy.momo-store.ru.website.yandexcloud.net
+  fqdn: momo.kuropatko.ru
   annotations:
-    subnets: e9b20nn2417gsiagha50
-    securityGroups: enpaoj4iobucsrf1eec2
+    subnets: enphj2i0ko9gobd7g7vq
+    securityGroups: enp7urf4ha7i7db8q674
     groupName: "for-k8s-nodegroup"
