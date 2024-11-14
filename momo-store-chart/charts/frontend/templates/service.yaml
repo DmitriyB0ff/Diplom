@@ -5,7 +5,7 @@ metadata:
   labels:
     app: frontend
 spec:
-  type: NodePort
+  type: LoadBalancer #NodePort
   ports:
     - name: http
       port: {{ .Values.ports.containerPort }}
