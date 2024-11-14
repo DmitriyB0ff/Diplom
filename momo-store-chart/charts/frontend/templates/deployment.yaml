@@ -52,4 +52,4 @@ spec:
             - name: frontend
               containerPort: {{ .Values.ports.containerPort }}
       imagePullSecrets:
-        - name: regcred
+        - name: docker-config-secret
