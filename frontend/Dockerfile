@@ -13,7 +13,6 @@ RUN npm run build -- --output-path=dist
 FROM nginx:latest 
 RUN rm -rf /usr/share/nginx/html/*
 #RUN mkdir /usr/share/nginx/html/momo-store
-
 COPY --from=builder /app/dist /usr/share/nginx/html
 COPY --from=builder /app/dist /usr/share/nginx/html/momo-store
 RUN rm /etc/nginx/conf.d/default.conf
