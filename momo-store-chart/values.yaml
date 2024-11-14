@@ -7,7 +7,7 @@ backend: # Это имя чарта из dependencies
     pullPolicy: IfNotPresent
 
   spec:
-      replicas: "2"
+      replicas: "1"
       revisionHistoryLimit: "15"
   strategy:
     rollingUpdate:
@@ -28,7 +28,7 @@ frontend:
     pullPolicy: IfNotPresent 
 
   spec: 
-      replicas: "2"
+      replicas: "1"
       revisionHistoryLimit: "15"
   ports:
       containerPort: "80"
