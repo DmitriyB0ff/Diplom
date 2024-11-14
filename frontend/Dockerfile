@@ -6,7 +6,7 @@ ARG VUE_APP_API_URL=http://localhost:8081
 WORKDIR '/app'
 COPY . .
 RUN npm install
-RUN npm run build -- --output-path=dist
+RUN npm run build --output-path=dist
 
 #release 
 FROM nginx:latest 
