@@ -1,4 +1,4 @@
-# build 
+# build  
 FROM node:16.20.0-alpine3.18 AS builder 
 ARG VERSION=${VERSION}
 #ARG NODE_ENV=production 
