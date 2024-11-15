@@ -1,7 +1,7 @@
 apiVersion: v2
-appVersion: 1.0.1641951
+appVersion: 1.0.1641992
 description: Frontend Helm Chart
 name: frontend
 type: application
-version: 1.0.1641951
+version: 1.0.1641992
 
