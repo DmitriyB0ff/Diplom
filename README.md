@@ -1,4 +1,7 @@
 # momostore
+
+<img width="900" alt="image" src="https://gitlab.praktikum-services.ru/std-ext-008-12/momostore/-/raw/main/ReadME.jpg">
+
 # Momo Store Пельменная №2
 
 ## Устройство репозитория
