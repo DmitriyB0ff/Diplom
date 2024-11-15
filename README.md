@@ -38,7 +38,7 @@
 **Пайплайн 2 (trigger):**
 
 1. Развёртывание приложения в кластере kubernetis с помощью helm (deploy)
-1. Отправка новой версии helm-chart приложения в репозиторий Nexus (https://nexus.k8s.praktikum-services.tech/repository/momo-store-helm-surin-vasiliy-11/)
+1. Отправка новой версии helm-chart приложения в репозиторий Nexus (https://nexus.praktikum-services.tech/service/rest/repository/browse/008-12-Helm/)
 
 **Пайплайны описаны в файлах:**
 
