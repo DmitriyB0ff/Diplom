@@ -1,4 +1,4 @@
-# values.yaml !!!
+# values.yaml !!! 
 backend: # Это имя чарта из dependencies
   # Вместо latest правильнее использовать версию .Chart.AppVersion в шаблоне
   image:
