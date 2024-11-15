@@ -1,5 +1,5 @@
 apiVersion: v2  
-appVersion: 1.0.1641895
+appVersion: 1.0.1641907
 dependencies:
 - name: backend
   repository: ""
@@ -10,4 +10,4 @@ dependencies:
 description: momo-store Helm Chart
 name: kubecluster-for-momoapp
 type: application
-version: 1.0.1641895
+version: 1.0.1641907
