@@ -10,7 +10,7 @@ spec:
   tls:
     - hosts:
         - "{{ .Values.fqdn }}"
-      secretName: letsencrypt
+      secretName: k8s-secret
   rules:
     # Хост определяет правило направления траффика по доменному имени
   - host: "{{ .Values.fqdn }}"
